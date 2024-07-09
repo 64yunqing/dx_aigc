@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .show{
+        width: 100px;
+        height: 200px;
+        background-color: green;
+    }
+</style>
+<body>
+    <div id="container"></div>
+    <script>
+        let container = document.getElementById('container');
+        // 重排 回流
+        // container.style.width = '100px';
+        // container.style.height = '200px';
+        // 重绘
+        // container.style.background = 'red';
+        container.classList.add('show');
+        // let content = ''
+        // 文档碎片 可以像真实的DOM一样去挂载节点
+        let content = document.createDocumentFragment();
+        for(var count = 0;count <10000;count++){
+            // 执行会很快
+            let oSpan = document.createElement('span');
+            oPan.innerHTML = '测试'
+            content.apppendChild(oSpan);
+        }// 慢 一次将文档碎片挂上去了，交接，自动消失·
+         container.appendChild(content);
+           
+    </script>
+</body>
+</html>

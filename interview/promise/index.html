@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaining Promise</title>
+</head>
+<body>
+    <script>
+        // JS 代码如何运行 -> JS 引擎中运行 单线程 渲染引擎 (页面不能卡顿)
+        // Event Loop 事件循环 同步代码，异步代码
+        // 执行栈 压入script 第一个macro-task
+        // marco-task setTimeout setInterval script setImmediat I/O 操作
+        // UI 渲染
+        // 微任务 Promise process.nextTick MutationObserver
+        // 宏任务macro-task ， 微任务 micro-task
+        // 事件循环过程 Event loop
+
+        // - 初始状态  调用栈为空 栈底是全局作用域 micro 队列为空 
+        //   macro 队列只有一个script 脚本 (整体代码)
+        // - 全局上下文 被推入调用栈，同步执行代码。
+        //     执行中，如果产生了macro micro 加入各自的任务队列
+        // - script 脚本移出 macro队列
+        // - event loop 直到两个队列都清空
+        // - 执行渲染操作，更新界面
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<script>
+    // let obj = {};
+    // function Person(){
+    //     // var this = {
+    //     // name : 'Tom'
+    //     // }
+    //     // this.__proto__ = Person.prototype
+    //     // return this
+    //     this.name = 'Tom'
+    // }
+    // let p = new Person();
+
+    // // p.__proto__ === Person.prototype
+
+    // // [[Prototype]]   __proto__
+
+    Grand.prototype.lastName = '张'
+    function Grand(){
+        this.name = '三'
+    }
+    Father.prototype = new Grand()
+    function Father(){
+        this.age = 40
+    }
+    Son.prototype = new Father()
+    function Son(){
+        this.like = 'coding'
+    }
+    let son = new Son()
+    // console.log(son.like);
+    console.log(son.lastName);
+
+    // {
+    //     like:'coding',
+    //     __proto__: Son.prototype == new Father():{
+    //         __proto__: Father.prototype == new Grand():{
+    //             __proto__: Grand.prototype == new Object():{
+    //                 __proto__: Object.prototype :{
+    //                     __proto__: null
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+</script>

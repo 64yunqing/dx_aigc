@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.music-head{
+    position: relative;
+}
+.nav{
+    position: relative;
+    font-size: 12px;
+    padding: 20px 0;
+    color: blanchedalmond;
+}
+.back{
+    position: absolute;
+    left: 30px;
+}
+.title{
+    text-align: center;
+}
+.bg{
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url(https://pic.imeitou.com/uploads/allimg/2020062609/ni3khwhgzwh.jpeg);
+    z-index: -1;
+    filter:blur(60px);
+}
+.music-list{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background-color: white;
+    top: 30%;
+    z-index: -1;
+}
+.music-img{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top:calc(50% - 200px);
+    left:calc(50% - 150px);
+    border-radius: 20%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    background-image: url(https://pic.imeitou.com/uploads/allimg/2020062609/ni3khwhgzwh.jpeg);
+    z-index: +1;
+}
+.song-detail{
+    position: absolute;
+    width: 80%;
+    margin-top: 70%;
+    text-align: center;
+    left:calc(50% - 40%)
+}
+.name{
+    font-size: 21px;
+}

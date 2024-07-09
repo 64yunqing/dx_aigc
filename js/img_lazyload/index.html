@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: gray;
+}
+img{
+    display: block;
+    margin-bottom: 50px;
+    width: 400px;
+    height: 400px;
+}
+        </style>
+</head>
+<body>
+    <script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <img  data-price="20" data-src="http://hbimg.huaban.com/ff40096602626e3a40e15271a9036889985829121f00a-k4nCOq">
+    <img  data-src="http://hbimg.huaban.com/68f00af25094b1f17840f9a37ecbefc047dcdd0d24e1a4-uViyKA">
+    <img  data-src="http://hbimg.huaban.com/b4008b872e635ee5a5eccd1b5fb109483ffb82b6389b5-3YQlz2">
+    <img  data-src="http://hbimg.huaban.com/d6beb51da15d69314038b6b79f56b7f6a57e2166137562-ErHeYF">
+    <img  data-src="http://hbimg.huaban.com/e5df7a7e21cadf899be1c959d32d0ec0ad3c6ae9115241-Jpyztp">
+    <img  data-src="http://hbimg.huaban.com/65d525a7b29a468c27d4ea61c0c6d47b0b3fc1ce15e986-FRa0vZ">
+    <img  data-src="http://hbimg.huaban.com/b6220b7dcc6ff85d93118817ba7bab086290fda042f91-UjkM9z">
+    <img  data-src="http://hbimg.huaban.com/666d8ccf68eb788d5dbb110d9d6afa1876f21a1e160da9-hF5UUE">
+    <script>
+        const imgs = document.getElementsByTagName('img');
+        const num = imgs.length;
+        let n = 0;
+        document.addEventListener('DOMContentLoaded',()=>{
+            loadImage()
+        });
+        
+        function loadImage(){
+            console.log('haha');
+            // 是否在可视区
+            let screenHeight = document.documentElement.clientHeight;//一屏的高度
+            //滚动条
+            //不同浏览器的兼容性问题
+            let scrollTop = document.documentElement.scrollTop
+            ||document.body.scrollTop;
+            for(let i =0;i<num;i++){
+                // console.log(imgs[i].offsetTop);
+                if(imgs[i].offsetTop <screenHeight+scrollTop){
+                    //数据属性 
+                    // console.log(imgs[i].dataset.src,imgs[i].dataset.price);
+                    imgs[i].src = imgs[i].getAttribute('data-src');
+                    n = i + 1 ;
+                    if(n === num){
+                        window.removeEventListener('scroll',throttleLayLoad);
+                    }
+                }
+            }
+        }
+        const throttleLayLoad = _.throttle(loadImage,300);
+        window.addEventListener('scroll',throttleLayLoad);
+    </script>
+</body>
+</html>

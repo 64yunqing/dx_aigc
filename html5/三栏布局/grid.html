@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .left,.right{
+            height: 200px;
+            width: 200px;
+            background: pink;
+        }
+        .content{
+            height: 200px;
+            background: bisque;
+        }
+        .page{
+            display: grid;
+            grid-template-columns: 200px auto 200px;
+        }
+        </style>
+</head>
+<body>
+    <div class="page">
+        <div class="left">广告位</div>
+        <div class="content">主要内容</div>
+        <div class="right">广告位</div>
+    </div>
+</body>
+</html>

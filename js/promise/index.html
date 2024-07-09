@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+    <!-- 对一个未来会发生的事情，先许下个诺言 -->
+     <script>
+        // JS 单线程  排队
+        // 同步 
+        // 耗时 异步 -> event loop
+        // 前端还有很多交互 不能阻塞，断片了
+        // event loop 取出 任务
+        console.log('111111');
+        // 宏任务
+        setTimeout(() => {
+           console.log('1234'); 
+           setTimeout(() => {
+           console.log(666); 
+        }, 2000);
+        }, 3000);
+        setTimeout(() => {
+           console.log('5678'); 
+        }, 3000);
+        setTimeout(() => {
+           console.log('9101112'); 
+        }, 5000);
+        // 微任务
+        console.log('2222222');
+     </script>
+</body>
+</html>

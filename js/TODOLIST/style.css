@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+.todo{
+    width: 500px;
+    height: 500px;
+    border: 1px solid #00000000;
+}
+.title{
+    font-size: 50px;
+    color: #cf0c0c;
+    text-align: center;
+}
+.input-group{
+    display: flex;
+    font-size: 30px;
+}
+.label{
+padding: 10px;
+}
+.content{
+    flex: 1;
+    font-size: 20px;
+}
+.btn{
+    width: 80px;
+    font-size: 30px;
+    margin-left: 10px;
+}
+.list-item{
+    display: flex;
+    padding: 20px;
+    border-bottom: 1px solid #313030e8;
+    font-size: 26px;
+    align-items: center;
+}
+.itme-check{
+    width: 30px;
+    height: 30px;
+}
+.itme-content{
+    flex: 1;
+    margin: 0 10px;
+}
+.span-close{
+    display: none;
+}
+.list-item:hover .span-close{
+    display: block;
+}

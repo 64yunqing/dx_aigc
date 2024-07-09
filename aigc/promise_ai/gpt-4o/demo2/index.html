@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>稀土掘金</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="header__navigation">
+            <ul class="header__menu">
+                <li class="header__menu-item"><a href="#" class="header__menu-link">首页</a></li>
+                <li class="header__menu-item"><a href="#" class="header__menu-link">BOT</a></li>
+                <li class="header__menu-item"><a href="#" class="header__menu-link">课程</a></li>
+                <li class="header__menu-item"><a href="#" class="header__menu-link">直播</a></li>
+                <li class="header__menu-item"><a href="#" class="header__menu-link">活动</a></li>
+                <li class="header__menu-item"><a href="#" class="header__menu-link">竞赛</a></li>
+                <li class="header__menu-item"><a href="#" class="header__menu-link">商城</a></li>
+                <li class="header__menu-item"><a href="#" class="header__menu-link">APP</a></li>
+                <li class="header__menu-item"><a href="#" class="header__menu-link">插件</a></li>
+            </ul>
+        </nav>
+        <form class="search-form" action="/search" method="get">
+            <input type="text" class="search-form__input" placeholder="搜索稀土掘金" name="q">
+            <button type="submit" class="search-form__submit">搜索</button>
+        </form>
+        <div class="header__right">
+            <a href="#" class="header__centered">创作者中心</a>
+            <a href="#" class="header__member">会员</a>
+        </div>
+    </header>
+
+    <main class="content">
+        <section class="content__category">
+            <h2 class="content__category-title">综合</h2>
+            <p class="content__category-description">大模型子站</p>
+        </section>
+
+        <section class="content__articles">
+            <article class="article">
+                <img src="https://via.placeholder.com/150x150" alt="VS Code技巧" class="article__image">
+                <div class="article__content">
+                    <h3 class="article__title">学会这个VS Code技巧，摸鱼的时间又变多了</h3>
+                    <p class="article__author">Eachan &bull; 16k &bull; 114</p>
+                    <p class="article__description">上班不划水，那就在个鬼…… 哗哗哗，今天我又来给大家安利一个个人甚至是团队提高效率的小技巧。</p>
+                    <a href="#" class="article__read-more">前编 &rarr; JavaScript</a>
+                </div>
+            </article>
+            
+            <!-- Add more articles here -->
+
+        </section>
+
+        <aside class="sidebar">
+            <div class="sidebar__box sidebar__box--ad">
+                <img src="https://via.placeholder.com/300x250" alt="广告" class="sidebar__ad-image">
+                <p class="sidebar__ad-text">广告</p>
+            </div>
+            <div class="sidebar__box sidebar__box--info">
+                <h3 class="sidebar__box-title">连续签到 49 天</h3>
+                <p class="sidebar__box-content">点亮你在社区的每一天</p>
+                <button class="sidebar__box-action">已签到</button>
+            </div>
+            <div class="sidebar__box sidebar__box--list">
+                <h3 class="sidebar__box-title">文章榜</h3>
+                <ul class="sidebar__list">
+                    <li class="sidebar__list-item">1 &bull; 我开源了一个支持自动生成 co…</li>
+                    <li class="sidebar__list-item">2 &bull; 老板：给你20天，写一个可拖…</li>
+                    <li class="sidebar__list-item">3 &bull; 只会Vue的我，一入职就让用R…</li>
+                    <li class="sidebar__list-item">4 &bull; 改进菜单栏动态展示样式，我…</li>
+                    <li class="sidebar__list-item">5 &bull; 「最后一次，彻底搞懂kotlin…</li>
+                </ul>
+                <a href="#" class="sidebar__list-readmore">查看更多</a>
+            </div>
+        </aside>
+    </main>
+</body>
+</html>
