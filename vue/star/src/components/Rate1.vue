@@ -3,7 +3,8 @@
         <div class="rate" @mouseout="mouseOut">
             <span @mouseover="mouseOver(num)" v-for="num in 5" :key="num">☆</span>
             <span class="hollow" :style="fontwidth">
-                <span @click="onRate(num)" @mouseover="mouseOver(num)" v-for="num in 5" :key="num">★</span>
+                <span @click="onRate(num)" @mouseover="mouseOver(num)" 
+                v-for="num in 5" :key="num">★</span>
                 
             </span>
         </div>
