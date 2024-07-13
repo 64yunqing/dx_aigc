@@ -3,7 +3,7 @@
         <div class="goods-content">
             <div class="menu-wrap" ref="menuWrap">
                 <ul>
-                    <li class="menu-item" @click="state.currentIndex = index"
+                    <li class="menu-item" @click="selectMenu(index);"
                         :class="{ 'current': state.currentIndex === index }" 
                         v-for="(item, index) in state.goods"
                         :key="index">
@@ -13,10 +13,10 @@
                     </li>
                 </ul>
             </div>
-            <div class="foods-wrap">
+            <div class="foods-wrap" ref="foodsWrap">
                 <ul>
                     <!-- 菜系 -->
-                    <li class="food-list" v-for="(item, index) in state.goods" :key="index">
+                    <li ref="foodList" class="food-list" v-for="(item, index) in state.goods" :key="index">
                         <h1 class="title">{{ item.name }}</h1>
                         <ul>
                             <!-- 菜品 -->
@@ -54,10 +54,16 @@ import { getGoods } from '@/api/index';
 import { ref, nextTick, onMounted } from 'vue';
 import BScroll from '@better-scroll/core'
 
+const foodList = ref(null)
+const selectMenu = (i) =>{
+    state.value.currentIndex = i
+    state.foodsScorll.scrollToElement(foodList.value[i],300)
+}
 
 const state = ref({
     goods: [],
     currentIndex: 0,
+    foodsScorll:null
 });
 onMounted(() => {
     getGoods().then(res => {
@@ -71,13 +77,16 @@ onMounted(() => {
 
 // 滚动效果
 const menuWrap = ref(null)
+const foodsWrap = ref(null)
 const initScroll = () => {
-    let bs = new BScroll(menuWrap.value, {
+    new BScroll(menuWrap.value, {
         click: true
     })
+    state.foodsScorll = new BScroll(foodsWrap.value, {
+        click: true
+    })
+
 }
-
-
 </script>
 
 <style lang="less" scoped>
@@ -89,7 +98,6 @@ const initScroll = () => {
     bottom: 46px;
     top: 177px;
     overflow: hidden;
-
     .goods-content {
         display: flex;
         height: 100%;
