@@ -1,42 +1,67 @@
 <template>
-    <div class="header">
+    <div class="header" @click="showDetaile=true">
         <div class="content-wrapper">
             <div class="avater">
-                <img src="./DWSlwJ7EhdpDmWQ.jpg" alt="">
+                <img :src="seller.avatar" alt="">
             </div>
             <div class="content">
                 <div class="title">
                     <span class="brand"></span>
-                    <span class="name">HelloWorld</span>
+                    <span class="name">{{seller.name}}</span>
                 </div>
                 <div class="description">
-                    牛马专送/10分钟送达
+                    {{seller.description}}/10分钟送达
                 </div>
-                <div class="support">
-                    <Support :type="0" :size="1"/>
-                    <span class="text">在线支付满20减19</span>
+                <div class="support" v-if="seller.supports">
+                    <Support :type="seller.supports[0].type" :size="1"/>
+                    <span class="text">{{seller.supports[0].description}}</span>
                 </div>
             </div>
-            <div class="support-count">
-                <span class="count">3个</span>
+            <div class="support-count" v-if="seller.supports">
+                <span class="count">{{seller.supports.length}}个</span>
                 <i class="iconfont icon-youjiantou-tianchong"></i>
             </div>
         </div>
         <div class="bulletion-wrapper">
             <span class="bulletion-title"></span>
-            <span class="bulletion-text">公告---------------------------------------------------------------------------------------</span>
+            <span class="bulletion-text">{{seller.bulletin}}</span>
             <i class="iconfont icon-youjiantou-tianchong"></i>
         </div>
         
         <div class="bg"></div>
+
+        <Detail v-show="showDetaile" @hide="handle"/>
     </div>
 
 </template>
 
 <script setup>
 import Support from '@/components/support-icon/index.vue'
-import pic from './DWSlwJ7EhdpDmWQ.jpg'
-const bg = `url(${pic})`
+import {  defineProps,onBeforeUpdate } from 'vue';
+import { ref } from 'vue';
+import Detail from '@/components/header-detail/index.vue';
+
+let showDetaile = ref(false)
+
+const handle = (e)=>{
+    showDetaile.value = e;
+}
+
+const props = defineProps({
+    seller:{
+        type:Object,
+        default:()=>{}
+    }
+})
+
+const good = ref('')
+onBeforeUpdate(() => {
+    good.value = props;
+});
+const bg = ref('')
+onBeforeUpdate(() => {
+    bg.value = `url(${props.seller.avatar})`
+});
 
 
 </script>
