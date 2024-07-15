@@ -11,17 +11,16 @@
         <div class="tab-wrap">
             <router-link to="/seller">商家</router-link>
         </div>
-        
     </div>
     
-    <Router-view></Router-view>
-    </template>
+    <RouterView :seller="sellerDate" ></RouterView>
+
+</template>
 
 <script setup>
 import Header from './components/header/index.vue';
 import {ref, onMounted} from 'vue';
 import {getSeller} from '@/api/index';
-
 
 const sellerDate = ref({});
 

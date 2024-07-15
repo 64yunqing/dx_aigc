@@ -4,7 +4,7 @@
             <div class="menu-wrap" ref="menuWrap">
                 <ul>
                     <li class="menu-item" @click="selectMenu(index);"
-                        :class="{ 'current': state.currentIndex === index }" 
+                        :class="{ 'current': currentIndex === index }" 
                         v-for="(item, index) in state.goods"
                         :key="index">
                         <span class="text">
@@ -36,7 +36,8 @@
                                         <span class="old" v-if="food.oldPrice">￥{{ food.oldPrice }}</span>
                                     </div>
                                     <div class="cartcontrol-wrap">
-                                        +
+                                        
+                                        <Cart :food="food" @update:food="updateFood"/>
                                     </div>
                                 </div>
                             </li>
@@ -46,31 +47,42 @@
             </div>
         </div>
     </div>
+
+    <ShopCart :shopcart="state.selectedFoods" :seller="seller"/>
 </template>
 
 <script setup>
 import SupportIcon from '@/components/support-icon/index.vue';
 import { getGoods } from '@/api/index';
-import { ref, nextTick, onMounted } from 'vue';
+import { ref, nextTick, onMounted, reactive ,computed} from 'vue';
 import BScroll from '@better-scroll/core'
+import Cart from '@/components/cart-control/index.vue';
+import ShopCart from '@/components/shop-cart/index.vue';
+
+defineProps({
+    seller:{}
+})
 
 const foodList = ref(null)
 const selectMenu = (i) =>{
-    state.value.currentIndex = i
-    state.foodsScorll.scrollToElement(foodList.value[i],300)
+    state.currentIndex = i
+    state.foodsScorll.scrollToElement(foodList.value[i],100)
 }
 
-const state = ref({
+const state = reactive({
     goods: [],
     currentIndex: 0,
-    foodsScorll:null
+    foodsScorll:null,
+    listHeight:[],
+    scrollY:0,
+    selectedFoods:[]
 });
 onMounted(() => {
     getGoods().then(res => {
-        console.log(res);
-        state.value.goods = res;
+        state.goods = res;
         nextTick(() => { // 只会在组件编译挂载且渲染完成后才执行
             initScroll()
+            calulateHeight()
         })
     });
 })
@@ -83,9 +95,50 @@ const initScroll = () => {
         click: true
     })
     state.foodsScorll = new BScroll(foodsWrap.value, {
-        click: true
+        click: true,
+        probeType:3
     })
 
+    state.foodsScorll.on('scroll',pos => {
+        state.scrollY=Math.abs(pos.y)
+
+    })
+}
+
+const calulateHeight = (i) =>{
+    // foodList.value[0].clientHeight
+    let height = 0
+    state.listHeight.push(height)
+    foodList.value.forEach(li => {
+        height += li.clientHeight
+        state.listHeight.push(height)
+    })
+}
+
+const currentIndex = computed(()=>{
+    for(let i = 0; i < state.listHeight.length ; i++){
+        let h1 = state.listHeight[i]
+        let h2 = state.listHeight[i+1]
+        if( !h2 || (state.scrollY >= h1 && state.scrollY < h2)){
+            return i
+        }
+    }
+
+})
+
+// 子组件点了+
+const updateFood = () =>{
+    // 将用有count字段的对象都挑出来
+    const arr =[]
+    for(let good of state.goods){
+        for(let food of good.foods){
+            if( food.count && !state.selectedFoods.includes(food)){
+                arr.push(food)
+            }
+        }
+    }
+    state.selectedFoods = arr
+    console.log(state.selectedFoods);
 }
 </script>
 

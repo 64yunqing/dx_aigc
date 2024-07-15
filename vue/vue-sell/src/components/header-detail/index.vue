@@ -3,7 +3,7 @@
         <div class="header-detail">
             <div class="detail-wrapper">
                 <div class="detail-main">
-                    <h1 class="name">商店名字</h1>
+                    <h1 class="name">{{goods.name}}</h1>
                     <div class="star-wrapper">
                         ⭐⭐⭐⭐⭐
                     </div>
@@ -49,8 +49,6 @@ const goods = ref({});
 
 onMounted(() => {
     getSeller().then(res => {
-        console.log(res);
-        console.log(123);
         goods.value = res;
     })
 })
