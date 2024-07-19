@@ -51,4 +51,27 @@
     - validate rules 配置一下
         - 对 form 进行 ref 绑定， 绑定的是Form 组件
         - 提交之前 valid一下 Form对象上有validate 方法
-    - 提交
+    - 提交 反馈成功或失败  跳转
+
+- pinia
+    - 状态管理
+    - 比vuex更年轻更好用
+    - app.use(createPinia())
+
+- 全局状态设计
+    - collapse 状态 true | false 
+        - 窄屏的pad 
+    - permiss 权限状态
+        - 跨组件层级访问是常态
+        - key , defaultList
+        - dedfaultList 可用于计算 login.vue ms_name this.handle_set  key
+        - router.js 403 
+        - 任何地方 
+
+- Object.entries 的用法 和应用场景
+    - es6 新增的遍历对象的方法
+    - Object.keys() Object.values() 的基础上 将key value 做为一个数组的1,2 项返回两组数组
+    - app.component 全局声明组件的时候 一次性的把ElementPlus/icons 全部注册
+    - for of + 展开运算符 
+    - ElementPlus 设计的很好， 个人开发者可能用icons,企业一般会有自己的icons
+        ElementPlus 将icons 拆开，更轻，同时也提供了定制性

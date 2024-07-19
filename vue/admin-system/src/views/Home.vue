@@ -1,14 +1,23 @@
 <template>
-    <div>
-        Home
-        <router-view />
+    <div class="wrapper">
+        <v-header />
+        <v-sidebar />
+        <main class="content-box">
+            <router-view />
+        </main>
     </div>
 </template>
 
 <script setup>
+import vHeader from '../components/header.vue'
+import vSidebar from '../components/sidebar.vue'
+
 
 </script>
 
-<style lang="css" scoped>
-
+<style lang="css" >
+.wrapper {
+    height: 100vh;
+    overflow: hidden;
+}
 </style>

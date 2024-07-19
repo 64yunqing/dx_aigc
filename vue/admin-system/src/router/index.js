@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
 import NProgress from 'nprogress';
-import 'nprogress/nprogress.css'
+import 'nprogress/nprogress.css';
+import { usePermissStore } from '../stroe/permiss';
 
 const routes = [
     {
@@ -68,7 +69,7 @@ const routes = [
     },
     {
         path:'/:path(.*)',
-        redirect:'/404'
+        redirect: '/404'
     }
 ]
 // url  传统url 跟后端一样 
@@ -79,29 +80,26 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
+    NProgress.start();
     document.title = to.meta.title
-    const role = localStorage.getItem("ms_name") || 'admin';
-    const permiss = {
-        'admin': ['1', '11', '12'],
-        'user': ['1', '11']
-    }
-    // console.log(role, permiss[role], permiss[role].includes(to.meta.permiss))
-    // if (!role && !to.meta.noAuth !== true) {
-    //     next('/login')
-    // } else if ( !permiss[role].includes(to.meta.permiss)) {
-    //     next('/403')
-    // } else {
-    //     next()
-    // }console.log(role, permiss[role], permiss[role].includes(to.meta.permiss))
-    if (!role && !to.meta.noAuth !== true) {
-        next('/login')
-    } else if (typeof to.meta.permiss == 'string'
-        && !permiss[role].includes(to.meta.permiss)
-     ){
+    const role = localStorage.getItem("ms_name");
+    const permissStore = usePermissStore();
+
+   
+    if (!role && to.meta.noAuth !== true) {
+        next('/login') // login
+    } else if (typeof to.meta.permiss == 'string' 
+        && !permissStore.key.includes(to.meta.permiss)
+    ) {
         next('/403')
     } else {
-        next() // 不需要登录或者已经登录了，有相应权限的页面
+        next()  // 不需要登录或者登录了，有相应权限的页面
     }
+
+})
+
+router.afterEach(() => {
+    NProgress.done()
 })
 
 export default router
