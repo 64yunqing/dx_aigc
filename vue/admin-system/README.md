@@ -61,6 +61,7 @@
 - 全局状态设计
     - collapse 状态 true | false 
         - 窄屏的pad 
+        - v-if/v-else + action collapse
     - permiss 权限状态
         - 跨组件层级访问是常态
         - key , defaultList
@@ -75,3 +76,22 @@
     - for of + 展开运算符 
     - ElementPlus 设计的很好， 个人开发者可能用icons,企业一般会有自己的icons
         ElementPlus 将icons 拆开，更轻，同时也提供了定制性
+
+- css 特性
+    - transition
+    - css4 variable 主题切换
+        :root{ -- }
+        var()
+    
+- ElDropDown
+    - 触发DropDown的内容 交给slot
+    - DropDownMenu 内容? 交给具名slot
+    - slot 带来了组件超级定制性
+    - ElDialog slot header   default footer  三部分，无限复用
+    - template vue 内置组件 包一下内部的内容，挂载到页面上就消失
+        <template #header>
+
+- template 的用法
+    - vue 组件的模板声明
+    - template #title 具名slot 插入到相应位置
+    - template 接收指令 v-if v-show

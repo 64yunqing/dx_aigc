@@ -16,10 +16,17 @@ import {
      ElCheckbox,
      ElLink,
      ElIcon,
-     formContextKey
+     ElAvatar,
+     ElDropdown,
+     ElDropdownItem,
+     ElDropdownMenu,
+     ElMenu,
+     ElSubMenu,
+     ElMenuItem,
     } from 'element-plus';
 //  组件库依赖的样式
 import 'element-plus/dist/index.css'
+import './assets/styles/variable.css'
 import router from './router/index'
 
 import App from './App.vue'
@@ -40,5 +47,27 @@ app
     .use(ElCheckbox)
     .use(ElLink)
     .use(ElIcon)
+    .use(ElAvatar)
+    .use(ElDropdown)
+    .use(ElDropdownItem)
+    .use(ElDropdownMenu)
+    .use(ElMenu)
+    .use(ElSubMenu)
+    .use(ElMenuItem)
+// 自定义指令
+import { usePermissStore } from './stroe/permiss';
+
+const permissStore = usePermissStore();
+
+    app.directive('permiss',{
+        // v-if v-show  el dom, binding 绑定的属性
+        mounted(el,binding){
+            if(binding.value && !permissStore.key.includes(binding.value)){
+                el['hidden'] = true
+            }
+        }
+    })
+
+app
     .mount('#app')
  
