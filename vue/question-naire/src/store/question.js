@@ -6,7 +6,7 @@ export const useQuestionStore = defineStore('question',() => {
     const state = reactive({
         questionList:[],
         itemNum:1, // 第几题
-        answerrList:[] // 选中的答案
+        answerList:[] // 选中的答案
     })
         
     function getQuestionList(){
@@ -17,8 +17,17 @@ export const useQuestionStore = defineStore('question',() => {
         })
     }
 
+    function setItemNum() {
+        state.itemNum++
+    }
+
+    function saveAnswerList(index){
+        state.answerList.push(index)
+    }
     return {
         state,
         getQuestionList,
+        setItemNum,
+        saveAnswerList
     }
 })
