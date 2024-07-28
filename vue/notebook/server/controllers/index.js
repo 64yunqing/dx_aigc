@@ -34,4 +34,20 @@ const userLogin = (username,password) => {
     return allService.query(_sql);
 }
 
-module.exports = {userLogin}
+// 查找账号
+const userFind = (username) => {
+    const _sql = `select * from users where username="${username}"`;
+    return allService.query(_sql);
+}
+
+// 注册
+const userRegister = (values) => {
+    const _sql = `insert into users(username,password,nickname) values("${values.username}","${values.password}","${values.nickname}")`; 
+    return allService.query(_sql);
+
+}
+module.exports = {
+    userLogin,
+    userFind,
+    userRegister
+}

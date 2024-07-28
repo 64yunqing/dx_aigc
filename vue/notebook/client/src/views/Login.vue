@@ -33,21 +33,26 @@
 
     </div>
 
-    <p class="register">新用户？点击这里注册</p>
+    <p class="register" @click="router.push('/register')">新用户？点击这里注册</p>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
 import axios from '@/api'
+import { useRouter } from 'vue-router';
 
 const username = ref('')
 const password = ref('')
+const router = useRouter()
 
 const onSubmit = async (values) => {
   console.log(values); // 向后端发请求，将账号密码传给后端
   const res = await axios.post('/user/login', values)
   console.log(res);
+  localStorage.setItem('userInfo',JSON.stringify(res.data))
+  localStorage.setItem('token',res.token)
+  router.push('/noteClass')
 }
 </script>
 
@@ -58,6 +63,8 @@ const onSubmit = async (values) => {
   background-color: #fff;
   padding: 0 0.3rem;
   box-sizing: border-box;
+  background-image: url(http://gd-hbimg.huaban.com/543b32e04b2de725b257f4009f71419cdbf7dc2f126e46-wkGau6);
+  background-size: 100% 100%;
   overflow: hidden;
   position: relative;
 
@@ -70,11 +77,11 @@ const onSubmit = async (values) => {
   }
   .login-wrapper{
     width: 7.44rem;
-    border: 1px solid rgba(187, 187, 187, 1);
+    border: 1px solid rgba(29, 21, 142, 0.518);
     margin: 0 auto;
     margin-top: 1.7rem;
     border-radius: 0.3rem;
-    box-shadow: 0 0 0.533rem 0 rgba(170, 170, 170, 1);
+    box-shadow: 0 0 0.533rem 0 rgb(205, 212, 6);
     padding-bottom: 15px;
     .avatar{
       width: 2.4rem;

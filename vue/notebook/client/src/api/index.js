@@ -4,7 +4,13 @@ axios.defaults.baseURL = "http://localhost:3000";
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 // 请求拦截
-
+axios.interceptors.request.use(req => {
+    let jwtToken = localStorage.getItem('token');
+    if(jwtToken){
+        req.headers.Authorization = jwtToken
+    }
+    return req;
+})
 
 // 响应拦截
 axios.interceptors.response.use(res => {

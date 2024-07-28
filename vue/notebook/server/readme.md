@@ -1,4 +1,6 @@
 1. 启动一个koa服务
 2. 引入了koa/router
 3. 解决跨域 @koa/cors
-4. 借助@koa/bodyparser 解析post请求
+4. 借助@koa/bodyparser 辅助koa解析post请求传递的参数
+
+5. 定义了登录接口，接收到前端参数，封装了一个用于链接数据库的query函数，再定义了用于执行登录请求数据查找的sql语句，最后将从数据库查找到的结果返回给前端
