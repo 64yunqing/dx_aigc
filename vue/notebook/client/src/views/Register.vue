@@ -47,6 +47,7 @@
   import { ref } from 'vue';
   import axios from '@/api'
   import { useRouter } from 'vue-router';
+import { showToast } from 'vant';
   
   const username = ref('')
   const password = ref('')
@@ -57,6 +58,10 @@
     // console.log(values);
     const res = await axios.post('/user/register', values)
     console.log(res);
+    showToast(res.msg)
+    setTimeout(() => {
+      router.push('/login')
+    }, 1000)
   }
   </script>
   

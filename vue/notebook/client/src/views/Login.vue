@@ -49,7 +49,7 @@ const router = useRouter()
 const onSubmit = async (values) => {
   console.log(values); // 向后端发请求，将账号密码传给后端
   const res = await axios.post('/user/login', values)
-  console.log(res);
+  // console.log(res);
   localStorage.setItem('userInfo',JSON.stringify(res.data))
   localStorage.setItem('token',res.token)
   router.push('/noteClass')

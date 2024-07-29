@@ -4,6 +4,10 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
+      path: '/',
+      redirect: '/noteClass',
+    },
+    {
       path:'/login',
       component: () => import('../views/Login.vue'),
       meta:{
@@ -17,11 +21,24 @@ const router = createRouter({
         title:'注册'
       }
     },
-    
+    {
+      path:'/noteClass',
+      component: () => import('../views/NoteClass.vue'),
+      meta:{
+        title:'笔记分类'
+      }
+    },
+    {
+      path:'/noteList',
+      component: () => import('../views/NoteList.vue'),
+      meta:{
+        title:'笔记列表'
+      }
+    }
   ]
 })
 // 全局的路由守卫
-const whitePath = ['/login','register']
+const whitePath = ['/login','/register','/noteClass']
 router.beforeEach((to,from,next) => {
   document.title = to.meta.title
   // console.log(to);
