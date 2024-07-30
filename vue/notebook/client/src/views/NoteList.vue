@@ -6,7 +6,7 @@
                     <img src="" alt="">
                 </div>
                 <div class="time">2024-7-29</div>
-                <div class="title">标题</div>
+                <div class="title">{{res[0].title}}</div>
             </li>
             <li>
                 <div class="img">
@@ -30,17 +30,17 @@
 import { useRoute } from 'vue-router';
 import axios from '@/api/index.js';
 
-console.log(res);
-
 const route = useRoute();
-
+console.log(route);
 const title = route.query.title
-
+ 
 const res = await axios.get('/findNoteListByType',{
     params:{
         note_type:title
     }
+    
 })
+console.log(res);
 </script>
 
 <style lang="less" scoped>
