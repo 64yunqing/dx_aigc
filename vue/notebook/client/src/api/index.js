@@ -2,7 +2,7 @@ import axios from "axios";
 import { showToast } from 'vant';
 
 
-axios.defaults.baseURL = "http://localhost:3000";
+axios.defaults.baseURL = "http://121.40.181.94:3000";
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 // 请求拦截

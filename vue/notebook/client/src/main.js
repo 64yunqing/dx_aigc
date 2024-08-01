@@ -8,7 +8,7 @@ import 'lib-flexible/flexible.js'
 
 import { Button } from 'vant'
 import 'vant/lib/index.css'
-import { Form, Field, CellGroup,Icon } from 'vant';
+import { Form, Field, CellGroup,Icon,Uploader,Picker,Popup } from 'vant';
 
 const app = createApp(App)
 
@@ -21,4 +21,7 @@ app.use(Form);
 app.use(Field);
 app.use(CellGroup);
 app.use(Icon)
+app.use(Uploader)
+app.use(Picker)
+app.use(Popup)
 app.mount('#app')

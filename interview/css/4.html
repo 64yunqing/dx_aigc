@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            /* opacity: 0； */
+            /* width: 0;
+            height: 0;
+            background-color: black; */
+            /* visibility: hidden; */
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            clip-path: polygon(0px 100px, 100px 100px, 100px 0px, 0 100px);
+        }
+    </style>
+</head>
+<body>
+    <div id="box">hello</div>
+</body>
+<script>
+    document.getElementById('box').addEventListener('click',function(){
+        console.log('box clicked');
+    })
+</script>
+</html>

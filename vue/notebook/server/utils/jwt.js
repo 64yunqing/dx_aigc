@@ -14,6 +14,7 @@ function verify() {
                 const decoded = jwt.verify(jwtToken, '666')
                 if (decoded.id) { // 合法
                     ctx.userId = decoded.id
+                    ctx.nickname = decoded.nickname
                     await next()
                 }
             } catch (error) {
@@ -31,6 +32,7 @@ function verify() {
         }
     }
 }
+
 module.exports = {
     sign,
     verify
