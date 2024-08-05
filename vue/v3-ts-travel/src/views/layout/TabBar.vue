@@ -1,10 +1,10 @@
 <template>
 <van-tabbar v-model="active">
     <van-tabbar-item icon="home-o" to="/home">首页</van-tabbar-item>
-    <van-tabbar-item icon="search" to="/discount">特惠专区</van-tabbar-item>
-    <van-tabbar-item icon="friend-o" to="/collection">我的收藏</van-tabbar-item>
-    <van-tabbar-item icon="setting-o" to="/trip">行程</van-tabbar-item>
-    <van-tabbar-item icon="user-o" to="/account">我的账户</van-tabbar-item>
+    <van-tabbar-item icon="gem-o" to="/collection">立即订购</van-tabbar-item>
+    <van-tabbar-item icon="search" to="/discount">智驾AI</van-tabbar-item>
+    <van-tabbar-item icon="service-o" to="/trip">售后服务</van-tabbar-item>
+    <van-tabbar-item icon="user-o" to="/account">预约试驾</van-tabbar-item>
 </van-tabbar>
 </template>
 

@@ -1,10 +1,11 @@
 <template>
-  <!-- <router-view /> -->
-   {{ count }}
+  <router-view />
+
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue';
+
+// 挺多响应式对象的，
 </script>
 
 <style  scoped>
