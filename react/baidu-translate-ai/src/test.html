@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+        // js nlp transformers.js
+        // transformers.js nlp 框架
+        // 下载LLM
+        // pipeline 核心模块 nlp 任务
+        import {
+            pipeline,// pipe 模块，派出一个任务
+            env // 环境
+        } from 'https://cdn.jsdmirror.com/npm/@xenova/transformers@2.6.0'
+        env.allowLocalModels = false // 不要加载本地大模型
+
+        let pipe = await pipeline('sentiment-analysis');// 分类
+    </script>
+</body>
+
+</html>

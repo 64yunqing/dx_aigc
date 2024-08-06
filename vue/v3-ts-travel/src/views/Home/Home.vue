@@ -45,18 +45,35 @@
                 <div class="flex w-screen overflow-x-scroll space-x-2 px-4">
                     <div class="region-item flex-[0_0_auto]" v-for="item in CarsClass" :key="item.title">
                         <div class="item-wrapper w-64  rounded-lg overflow-hidden relative">
+                            <a :href="item.url" target="_blank">
                             <img :src="item.cover" alt="" />
-                            <div class="text-center">{{ item.title }}</div>
+                            <div class="text-center">{{ item.title }}
+                            </div>
+                        </a>
                         </div>
                     </div>
                 </div>
             </section>
-            <section>
-                <h2 class="title">探索更多</h2>
-                <!-- <PromotionalList class="px-4" :items="promotionalList" :next="handleNextPage" /> -->
-            </section>
+            <div class="content-layout">
+                <h1>售后服务</h1>
+                <div class="title">
+                    <div class="img-list">
+                        <div class="title-wrapper p-4" v-for="item in serviceContent" :key="item.title">
+                            <img :src="item.cover" alt="" />
+                            <h2>{{ item.title }}</h2>
+                            <p>{{ item.content }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </main>
+        <div class="flex justify-center mt-4 "> <!-- 添加了flex和justify-center类，并设置了一个顶部外边距 -->
+            <van-button plain type="primary" class="w-48 h-16 text-xl" url="https://www.xiaopeng.com/customerservice.html?reserve_source=168801">了解售后服务></van-button>
+        </div>
     </div>
+    
 </template>
 <script lang="ts" setup>
 import RecentlyViewCard from '@/components/RecentlyViewCard.vue'
@@ -74,7 +91,8 @@ const {
     // topBarState,
     // navBarState,
     recentlyViewedState,
-    CarsClass
+    CarsClass,
+    serviceContent
 } = toRefs(homeStore)
 
 
@@ -97,5 +115,15 @@ const {
     /* 半透明黑色背景 */
     color: white;
     text-align: center;
+}
+</style>
+<style>
+h1 {
+    font-size: 50px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 40px
 }
 </style>

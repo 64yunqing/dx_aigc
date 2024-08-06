@@ -8,8 +8,8 @@
             以下为最新消息</van-divider>
         <!-- ai机器人的打招呼 -->
         <div class="container-greet">
-            <span style="font-weight: bold;">Hi,我是智能选车助手GearGuideGo</span><br>
-            <span style="margin-top: 0.15rem;display: block;">祝愿您能找到心仪的汽车哟。</span>
+            <span style="font-weight: bold;">Hi,我是智驾AI</span><br>
+            <span style="margin-top: 0.15rem;display: block;">有什么关于车的问题都可以问我哦。</span>
         </div>
 
 
@@ -45,7 +45,7 @@
 
 
 
-    <div class=" inputAndRecommend">
+    <div class=" inputAndRecommend ">
         <ul class="recommendList">
             <li v-for="(item, index) in recommendQuestion" :key="index" @click="recommendClick(item)"
                 class="recommendList-item">
@@ -54,7 +54,7 @@
         </ul>
 
         <van-cell-group>
-            <van-field v-model="newQuestion" center clearable placeholder="请输入您的想要的车辆信息和预算">
+            <van-field v-model="newQuestion" center clearable placeholder="请输入您的问题">
                 <template #button>
                     <van-button size="small" type="primary" @click="submit" v-if="!isLoading">
 
@@ -287,11 +287,11 @@ watch(ans, (newVal: { data: any, visited: boolean }[]) => {
 
 .inputAndRecommend {
     width: 100vw;
-    height: 15vh;
+    height: 13vh;
 
     .recommendList {
         width: 100%;
-        height: 2rem;
+        height:60px;
         overflow-y: scroll;
 
 

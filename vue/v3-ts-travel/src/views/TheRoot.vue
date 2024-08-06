@@ -22,7 +22,6 @@ const cachedComponents = computed(() => {
     .filter(route => route.meta.cache)
     .map(route => route.name)
 });
-console.log(cachedComponents.value);
 // ts 
 </script>
 
