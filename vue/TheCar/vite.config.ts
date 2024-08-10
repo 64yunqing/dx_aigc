@@ -4,6 +4,7 @@ import path from "path"
 import Components from "unplugin-vue-components/vite"
 import { VantResolver } from "@vant/auto-import-resolver"
 
+
 // https://vitejs.dev/config/
 export default defineConfig({
 
@@ -15,7 +16,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': '/src',
-    },
-  },
+      "@": path.resolve(__dirname, "./src")
+    }
+  }
 })

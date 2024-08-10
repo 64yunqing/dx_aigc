@@ -36,7 +36,6 @@
                         </div>
                     </div>
                 </van-swipe-item>
-
             </van-swipe>
 
 
@@ -81,7 +80,7 @@ import RecentlyViewCard from '@/components/RecentlyViewCard.vue'
 // pinia 数据管理 + 组件显式
 import { ref } from 'vue'
 import { toRefs } from 'vue'
-import { useHomeStore } from '@/store/homeStore'
+import { useHomeStore } from '@/store/homeStore.ts'
 
 const homeStore = useHomeStore()
 

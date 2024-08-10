@@ -129,4 +129,9 @@
         说明...
     - ts interface 约束  LoginInfo
         ref<boolean>
+    - @ 指向失效
+    将tsconfig.json 配置文件中的两个path的.app删除
     
+    {
+      "path": "./tsconfig.app.json"
+    },

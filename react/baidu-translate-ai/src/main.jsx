@@ -5,9 +5,7 @@ import './index.css'
 
 const RootEle = () => {
   const [show, setShow] = useState(true)
-  setTimeout(() => {
-    setShow(false)
-  }, 5000)
+  
   return (
     <>
       {

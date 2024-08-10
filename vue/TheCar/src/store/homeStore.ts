@@ -3,7 +3,6 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 // 勾引 面试官 es6 module 问题
 import type {
-    HomeTopBarItem,
     ScrollItem,
     RecentlyViewItem,
     ServiceContent

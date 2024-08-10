@@ -1,7 +1,7 @@
 <template>
     <div>
         <router-view v-slot="{ Component }">
-            <keep-alive :include="cachedComponents">
+            <keep-alive :include="cachedComponents as string[]">
                 <component :is="Component" />
             </keep-alive>
         </router-view>

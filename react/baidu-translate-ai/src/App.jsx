@@ -1,7 +1,7 @@
-import { useState } from "react"
+import { useState,useEffect, useRef } from "react"
 import LanguageSelector from "./components/LanguageSelector"
 import './App.css'
-import { useEffect, useRef } from "react"
+import Progress from "./components/Progress.jsx"
 
 const App = () => {
   // useState 现在最牛逼的hook技术
@@ -77,7 +77,8 @@ const App = () => {
           readOnly
           ></textarea>
       </div>
-      <button disabled={disabled} onClick={translate}></button>
+      <button disabled={disabled} onClick={translate}>Translate</button>
+      <Progress text="LLM" percentage={20} />
     </>
   )
 }
