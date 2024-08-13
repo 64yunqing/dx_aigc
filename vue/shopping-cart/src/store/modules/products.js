@@ -3,7 +3,9 @@ const state = {
     all: []
 }
 
-const getters = {}
+const getters = {
+    
+}
 
 const actions = {
     // api 请求 -》 提交mutations     

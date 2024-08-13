@@ -14,6 +14,12 @@ const getters = {
                 quantity
             }
         })
+    },
+    cartTotalPrice:(state,getters) => {
+        // 数组消灭
+        return getters.cartProducts.reduce((total,product)=>{
+            return total + product.price * product.quantity
+        },0)
     }
 }
 

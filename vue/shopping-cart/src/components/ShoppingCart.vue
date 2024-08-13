@@ -9,6 +9,9 @@
                 {{ product.title }} - {{ product.title }} x {{ product.quantity }}
             </li>
         </ul>
+        <p>
+            Total: {{ total }}
+        </p>
     </div>
 </template>
 
@@ -17,6 +20,7 @@ import { computed } from 'vue';
 import { useStore } from 'vuex';
 const store = useStore();
 const products = computed(() => store.getters['cart/cartProducts']);
+const total = computed(() => store.getters['cart/cartTotalPrice']);
 </script>
 
 <style lang="css" scoped>
