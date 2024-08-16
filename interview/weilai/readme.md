@@ -104,3 +104,12 @@
     - type 类型别名，可以给简单数据提供类型别名，而interface 只能给对象类型声明
     - interface 支持 继承
     - interface ？ 可选 ; 隔开
+
+- 对泛型的理解
+    Generics 是一种允许我们使用类型变量的方式，来创建可重用的组件
+    核心可以使用类型变量 T 类型参数化
+    function identity<T>(arg: T): T {
+        return arg;
+    }
+
+
