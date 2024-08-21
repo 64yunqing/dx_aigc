@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function web_Scoket(url){
+            return new Promise((resolve)=>{
+                const socket = new WebSocket(url)
+                socket.onopen = () => {
+                    socket.send('1')
+                }
+                socket.onmessage = (res) => {
+                    resolve(res.data)
+                }
+            })
+        }
+
+        web_Scoket('ws://localhost:3000').then(res => {
+            console.log(res);
+        })
+    </script>
+</body>
+</html>
