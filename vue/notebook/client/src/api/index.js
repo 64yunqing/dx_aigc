@@ -25,7 +25,7 @@ axios.interceptors.response.use(
                 showToast(res.data.msg);
                 return Promise.reject(res);
             }
-
+            
             return res.data;
         }
     },
