@@ -53,3 +53,12 @@ let arr =[[1,2],[3,4],[5,6]]
 
         patches [`2 on`]
         items li2 item on new  vdomm
+
+- 算法送分题
+    奖励些刷过LeetCode 算法学习的同学
+- 动态规划，买股票问题
+    - 最值问题 动态规划 状态转移方程
+    - 贪心算法
+
+    
+- promise 处理并发请求的方法 

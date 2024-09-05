@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "navigationBarTextStyle": "pink",
+    "navigationBarTitleText": "hello",
+    "navigationBarBackgroundColor": "green",
+    "backgroundColor": "blue",
+    "enablePullDownRefresh": true
+  },
+  "usingComponents": {}
+}
