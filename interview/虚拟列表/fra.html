@@ -18,16 +18,17 @@
 
         function loop(curTotal, curIndex) {
             if(curTotal <= 0) return;
-
-            
             let pageCount = Math.min(once,curTotal)
 
             requestAnimationFrame(()=>{
+                let fragment = document.createDocumentFragment(); // 文档碎片
+                
                 for(let i = 0; i < pageCount; i++){
                     const li = document.createElement("li");
                     li.innerText = curIndex + i + ":" + ~~(Math.random() * total);
-                    ul.appendChild(li);
+                    fragment.appendChild(li);
                 }
+                ul.appendChild(fragment)
                 loop(curTotal - pageCount, curIndex + pageCount)
                 
             })
