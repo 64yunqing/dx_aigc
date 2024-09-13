@@ -1,13 +1,39 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/car/car",
+    "pages/mine/mine"
   ],
   "window": {
     "navigationBarTextStyle": "pink",
-    "navigationBarTitleText": "hello",
+    "navigationBarTitleText": "我的App",
     "navigationBarBackgroundColor": "green",
-    "backgroundColor": "blue",
+    "backgroundColor": "#F8F8F8",
     "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "green",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/logo.png",
+        "selectedIconPath": "static/logo.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "static/logo.png",
+        "selectedIconPath": "static/logo.png"
+      },
+      {
+        "pagePath": "pages/car/car",
+        "text": "购物车",
+        "iconPath": "static/logo.png",
+        "selectedIconPath": "static/logo.png"
+      }
+    ]
   },
   "usingComponents": {}
 }
