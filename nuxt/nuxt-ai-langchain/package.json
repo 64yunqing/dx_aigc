@@ -1,0 +1,23 @@
+{
+  "name": "nuxt-ai-langchain",
+  "version": "1.0.0",
+  "description": "- AI 全栈\r     - Vue\r     - Nuxt SSR \r     - LangChain\r     - OpenAI",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nuxt dev"
+  },
+  "dependencies": {
+    "nuxt":"^3.13.2",
+    "@nuxt/ui":"^2.8.1",
+    "nuxt-icon":"^0.6.5",
+    "langchain": "^0.3.2",
+    "@langchain/core": "^0.3.2",
+    "@langchain/openai": "^0.3.2"
+  },
+  "devDependencies": {
+    "nuxt-windicss":"^2.6.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
