@@ -205,7 +205,7 @@ watch(ans, (newVal: { data: any, visited: boolean }[]) => {
     /* 或者使用 hidden 来隐藏溢出内容 */
     .container-greet {
         padding: 0.4rem;
-        font-size: 0.4rem;
+        font-size: 1rem;
         color: rgb(48, 46, 72);
         background-color: rgb(237, 240, 245);
         margin-top: 5vh;
@@ -291,7 +291,7 @@ watch(ans, (newVal: { data: any, visited: boolean }[]) => {
 
     .recommendList {
         width: 100%;
-        height:60px;
+        height:40px;
         overflow-y: scroll;
 
 
