@@ -7,15 +7,17 @@
     "dev": "nuxt dev"
   },
   "dependencies": {
-    "nuxt":"^3.13.2",
-    "@nuxt/ui":"^2.8.1",
-    "nuxt-icon":"^0.6.5",
-    "langchain": "^0.3.2",
     "@langchain/core": "^0.3.2",
-    "@langchain/openai": "^0.3.2"
+    "@langchain/openai": "^0.3.2",
+    "@nuxt/ui": "^2.8.1",
+    "langchain": "^0.3.2",
+    "nuxt": "^3.13.2",
+    "nuxt-icon": "^0.5.0",
+    "sse.js": "^2.5.0",
+    "vue3-markdown-it": "^1.0.10"
   },
   "devDependencies": {
-    "nuxt-windicss":"^2.6.0"
+    "nuxt-windicss": "^2.6.0"
   },
   "keywords": [],
   "author": "",

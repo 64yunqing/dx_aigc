@@ -1,0 +1,28 @@
+{
+  "pages": [
+    "pages/todo/todo",
+    "pages/my/my",
+    "pages/edit/edit"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#b8fffd",
+    "backgroundColor": "#E0EEE0"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#007AFF",
+    "backgroundColor": "#b8fffd",
+    "list": [
+      {
+        "pagePath": "pages/todo/todo",
+        "text": "待办事项"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

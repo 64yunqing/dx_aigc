@@ -1,0 +1,42 @@
+{
+	"pages": [
+		{
+			"path": "pages/todo/todo",
+			"style": {
+				"navigationBarTitleText": "待办事项"
+			}
+		},
+		{
+			"path": "pages/my/my",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		},
+		{
+			"path": "pages/edit/edit",
+			"style": {
+				"navigationBarTitleText": "新建待办"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarBackgroundColor": "#FFE4E1",
+		"backgroundColor": "#E0EEE0"
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#007AFF",
+		"backgroundColor": "#FFE4E1",
+		"list": [
+			{
+				"pagePath": "pages/todo/todo",
+				"text": "待办事项"
+			},
+			{
+				"pagePath": "pages/my/my",
+				"text": "我的"
+			}
+		]
+	}
+}

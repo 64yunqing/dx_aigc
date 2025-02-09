@@ -1,0 +1,45 @@
+<view class="container">
+  <view class="form-item">
+    <textarea 
+      model:value="{{todoText}}"
+      placeholder="请输入待办事项内容" 
+      class="todo-input"
+    />
+  </view>
+
+  <view class="form-item">
+    <view class="image-upload" bindtap="chooseImage" wx:if="{{!imageUrl}}">
+      <text class="upload-text">点击添加图片</text>
+    </view>
+    <view class="image-preview" wx:else>
+      <image src="{{imageUrl}}" mode="aspectFill" class="preview-image"></image>
+      <view class="delete-image" bindtap="deleteImage">×</view>
+    </view>
+  </view>
+
+  <view class="form-item">
+    <picker 
+      mode="date" 
+      value="{{date}}"
+      bindchange="bindDateChange"
+    >
+      <view class="picker">
+        日期：{{date}}
+      </view>
+    </picker>
+    <picker 
+      mode="time" 
+      value="{{time}}"
+      bindchange="bindTimeChange"
+    >
+      <view class="picker">
+        时间：{{time}}
+      </view>
+    </picker>
+  </view>
+
+  <view class="button-group">
+    <button class="btn cancel" bindtap="cancel">取消</button>
+    <button class="btn confirm" bindtap="confirm">完成</button>
+  </view>
+</view> 

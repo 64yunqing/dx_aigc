@@ -110,9 +110,6 @@
       "#color-mode-options": [
         "./color-mode-options"
       ],
-      "#icon-collections": [
-        "./icon-collections"
-      ],
       "#vue-router": [
         "./vue-router"
       ],

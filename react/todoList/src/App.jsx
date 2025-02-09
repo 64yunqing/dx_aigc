@@ -32,9 +32,8 @@ class App extends Component {
       ]
     })
   }
-
+// 删除方法
   deleteTodo = (index) => {
-    // focus 数据，不再理底层的API
     const newTodos = [...this.state.todos]
     newTodos.splice(index, 1)
     this.setState({
@@ -49,7 +48,7 @@ class App extends Component {
       todos: newTodos
     })
   }
-
+// 编辑方法
   editTodo = (index, newText) =>{
     const newTodos = [...this.state.todos]
     newTodos[index].text = newText
@@ -57,8 +56,7 @@ class App extends Component {
       todos: newTodos
     })
   }
-
-  render(){
+    render(){
   const {todos} = this.state
     return (
       <div className="todo-app">

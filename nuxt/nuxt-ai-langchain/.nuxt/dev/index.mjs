@@ -1355,24 +1355,43 @@ const errorDev = /*#__PURE__*/Object.freeze({
   template: template$1
 });
 
-new ChatOpenAI({
-  model: "gpt-3.5-turbo",
-  apiKey: "sk-X0elCqFwBaSuKkLwmcvMKGMlacmRAwmb2hjaKm4MxBu2cdIY",
-  configuration: {
-    baseURL: "https://api.302.ai/v1/"
-  }
-});
-const chat_post = defineEventHandler((event) => {
+const chat_post = defineEventHandler(async (event) => {
+  const { question } = await readBody(event);
   event.node.res.writeHead(200, {
     "Content-Type": "text/event-stream",
-    "Cache-Control": "no-cache,no-transform",
+    "Cache-Control": "no-cache, no-transform",
     "Connection": "keep-alive"
   });
-  event.node.res.write(`data:hello`);
+  const sendData = (data) => {
+    event.node.res.write(`data: ${data}
+
+`);
+  };
+  sendData(JSON.stringify({ data: "" }));
+  const model = new ChatOpenAI({
+    model: "gpt-3.5-turbo",
+    apiKey: "sk-X0elCqFwBaSuKkLwmcvMKGMlacmRAwmb2hjaKm4MxBu2cdIY",
+    configuration: {
+      baseURL: "https://api.302.ai/v1/"
+    },
+    streaming: true,
+    callbacks: [
+      {
+        handleLLMNewToken(output) {
+          sendData(JSON.stringify({ data: output }));
+        },
+        handleLLMEnd() {
+          sendData(JSON.stringify({ data: "[DONE]" }));
+          event.node.res.end();
+        }
+      }
+    ]
+  });
   try {
     const messages = [
-      new HumanMessage("\u4F60\u597D")
+      new HumanMessage(question)
     ];
+    const response = await model.invoke(messages);
   } catch (err) {
   }
 });

@@ -1,0 +1,68 @@
+
+.container {
+  padding: 20rpx;
+  padding-bottom: 120rpx; /* 为悬浮按钮留出空间 */
+}
+.todo-list {
+  margin-top: 20rpx;
+}
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  box-shadow: 0 2rpx 4rpx rgba(0,0,0,0.1);
+}
+.todo-content {
+  display: flex;
+  align-items: flex-start;
+  flex: 1;
+}
+.todo-info {
+  margin-left: 20rpx;
+}
+.todo-details {
+  margin-top: 10rpx;
+}
+.todo-image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 8rpx;
+  margin-top: 10rpx;
+}
+.todo-time {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 8rpx;
+  display: block;
+}
+.completed {
+  text-decoration: line-through;
+  color: #999;
+}
+.delete-btn {
+  margin-left: 20rpx;
+  background-color: #ff4d4f !important;
+  color: #fff !important;
+}
+.add-button {
+  position: fixed;
+  right: 40rpx;
+  bottom: 40rpx;
+  width: 100rpx;
+  height: 100rpx;
+  background-color: #4CAF50;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4rpx 8rpx rgba(0,0,0,0.2);
+}
+.plus {
+  color: white;
+  font-size: 60rpx;
+  font-weight: bold;
+}

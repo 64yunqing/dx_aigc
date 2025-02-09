@@ -216,7 +216,7 @@ watch(ans, (newVal: { data: any, visited: boolean }[]) => {
 
     .dialogue {
         margin-top: 0.3rem;
-        font-size: 0.5rem;
+        font-size: 1rem;
         overflow-y: scroll;
 
         .dialogue-question {
@@ -297,7 +297,7 @@ watch(ans, (newVal: { data: any, visited: boolean }[]) => {
 
         .recommendList-item {
             width: fit-content;
-            font-size: 0.4rem;
+            font-size: 1rem;
             margin-top: 0.2rem;
             background-color: rgb(208, 231, 252);
             margin-left: 0.6rem;

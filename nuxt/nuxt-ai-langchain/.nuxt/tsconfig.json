@@ -98,9 +98,6 @@
       "#color-mode-options": [
         "./color-mode-options.mjs"
       ],
-      "#icon-collections": [
-        "./icon-collections"
-      ],
       "#vue-router": [
         "../node_modules/vue-router"
       ],
